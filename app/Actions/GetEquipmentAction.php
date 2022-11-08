@@ -14,7 +14,7 @@ class GetEquipmentAction
       if ($equipment) {
         return new EquipmentResource($equipment);
       } else {
-        return new ErrorResource('Not found Equipment');
+        return (new ErrorResource('Not found Equipment'))->response()->setStatusCode(404);
       }
     }
 }
